@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Social Media Manager</title></head>
+<body>
+<h1>Social Media Manager Web Application</h1>
+<div>
+    <h3><a href="/socialmedia">View all the social media</a></h3>
+</div>
+<div>
+    <h3>View tasks by priority</h3>
+    <form method="get" action="/socialmedia">
+        <input type="submit">
+    </form>
+</div>
+<div>
+    <h3>Create or edit a task</h3>
+    <form method="post" action="/socialmedia">
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" size="10">
+        </div>
+        <div>
+            <label for="link">Link: </label>
+            <input type="text" id="link"
+                   name="link" size="20">
+        </div>
+        <div>
+            <label for="icon">Icon: </label>
+            <input type="text" id="icon"
+                   name="icon" size="20">
+<!--            <form id="icon" name="icon">-->
+<!--                <input type="file" id="myFile" name="filename">-->
+<!--            </form>-->
+        </div>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>

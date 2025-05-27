@@ -1,4 +1,5 @@
-import androidx.compose.foundation.Image
+package About
+
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 

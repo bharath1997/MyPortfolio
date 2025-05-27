@@ -1,3 +1,4 @@
+import Home.HomeSection
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -13,25 +14,29 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import myportfolio.composeapp.generated.resources.Res
 import myportfolio.composeapp.generated.resources.compose_multiplatform
+import myportfolio.composeapp.generated.resources.profilepic
+import org.kodein.emoji.compose.EmojiService
+import ui.theme.AppTheme
 
 @Composable
 @Preview
-fun App() {
-    MaterialTheme {
+fun App(
+    batteryManager: BatteryManager
+) {
+    AppTheme {
+        remember { EmojiService.initialize() }
         var showContent by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Button(onClick = { showContent = !showContent }) {
                 Text("Click me!")
             }
             AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
                 Column(
                     Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
-                    Text("Something here")
+                    Text(text = "The current battery level is ${batteryManager.getBatteryLevel()}")
+                    HomeSection()
                 }
             }
         }

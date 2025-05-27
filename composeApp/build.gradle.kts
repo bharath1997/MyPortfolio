@@ -60,8 +60,11 @@ kotlin {
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
+            implementation(compose.materialIconsExtended)
+            implementation(libs.materialKolor)
 //            implementation(libs.androidx.compose.material3.adaptive.navigation.suite)
             implementation(libs.androidx.compose.navigation)
+            implementation("org.kodein.emoji:emoji-compose-m3:2.2.0")
 //            implementation(libs.androidx.compose.material3.adaptive.navigation)
             implementation(compose.ui)
             implementation(compose.components.resources)
@@ -71,6 +74,7 @@ kotlin {
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
+            implementation(libs.oshi.core)
         }
     }
 }
@@ -110,6 +114,9 @@ android {
     dependencies {
         debugImplementation(compose.uiTooling)
     }
+}
+dependencies {
+    implementation(libs.androidx.ui.text.google.fonts)
 }
 
 compose.desktop {
